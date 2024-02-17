@@ -48,20 +48,20 @@
       class="min-h-screen font-poppins bg-[#010313] bg-[url(images/background.png)] bg-no-repeat bg-center"
     >
       <!-- home screen -->
-      <section
-        class="home min-h-screen text-white flex justify-center items-center hidden"
+      <section id="home-screen"
+        class="home min-h-screen text-white flex justify-center items-center"
       >
         <div class="flex flex-col items-center gap-6">
           <h1 class="font-anton uppercase text-9xl text-center">
             alphabet clash
           </h1>
           <p class="">Unleash Your Keyboard Kung Fu: Press "Enter" to Play</p>
-          <button class="btn bg-white px-10 text-black">Play Now</button>
+          <button class="btn bg-white px-10 text-black" onclick="play()">Play Now</button>
         </div>
       </section>
 
       <!-- play ground -->
-      <section class="play-ground hidden">
+      <section id="play-ground" class="hidden">
         <div class="flex flex-col items-center gap-20 pt-20">
           <!-- screen -->
           <div
@@ -144,5 +144,6 @@
 
       </section>
     </main>
+    <script src="js/alpha.js"></script>
   </body>
 </html>
