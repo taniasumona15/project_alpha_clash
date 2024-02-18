@@ -42,9 +42,29 @@ return alphabet;
 
 
 function play(){
+    //hide everything show only  the playground
     hideElementById('home-screen');
+    hideElementById('final-score')
     removeElementById('play-ground');
+    setTextElementValueById('current-score',0);
+    setTextElementValueById('life-score', 5);
     continueGame();
+}
+
+
+
+
+function gameOver(){
+    hideElementById('play-ground');
+    removeElementById('final-score');
+    //update final score
+    //1. get the final score
+    const lastScore= getTextElementValueById('current-score');
+    setTextElementValueById('game-score', lastScore);
+    //2. clear the last selected alphabet
+    const currentAlphabet=getElementById('current-alphabet');
+    removeBackgroundColorById(currentAlphabet);
+
 }
 
 function setBackgroundColorById(elementId){
@@ -151,8 +171,24 @@ element.innerText=value;
 }
 
 
+function getElementById(elementId){
+    const element= document.getElementById(elementId);
+    const text= element.innerText;
+    return text;
+    
+}
+
 function handleKeyboardButtonPress(event){
     const playerPressed=event.key;
+
+//stop the game if user pressed 'Esc'
+if(playerPressed==='Escape'){
+gameOver();
+}
+
+
+
+
     // console.log(playerPressed)
     const currentAlphabetElement=document.getElementById('current-alphabet');
 const currentAlphabet= currentAlphabetElement.innerText;
@@ -177,7 +213,7 @@ const expectedAlphabet= currentAlphabet.toLowerCase();
         setTextElementValueById('life-score', updatedLife);
 
         if(updatedLife===0){
-            
+gameOver();
         }
         }
 }

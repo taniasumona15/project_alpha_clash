@@ -135,11 +135,12 @@
       <!-- game over screen -->
       <section class="score flex justify-center items-center min-h-screen hidden" id="final-score">
 <div class="text-white flex flex-col justify-center items-center gap-4 bg-[#ffffff33] p-8 rounded-md">
+  <h4 class="text-3xl">Game Over!</h4>
     <h1 class="text-8xl">
         <span class="font-extrabold" >Score :</span> 
-        <span>14</span>
+        <span id="game-score">14</span>
         </h1>
-        <button class="btn bg-white text-black px-7 text-[16px]">Play Now</button>
+        <button class="btn bg-white text-black px-7 text-[16px]" onclick="play()">Play Now</button>
         <p>Practice will make you a Pro</p>
 </div>
 
